@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+    <title>LETUSPREDICT LOGIN</title>
+</head>
+<style>
+    .sawonew{
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.9) 75%, #000 100%), url(https://images.pexels.com/photos/1261728/pexels-photo-1261728.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+        background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+    }
+    .container {
+        display: flex;
+        justify-content: center;
+        height: 91vh;
+        align-items: center;
+        flex-direction: column;
+    }
+    .mid{
+        border: 3px solid rgba(0, 0, 0, 0);
+        background-color: rgb(0 0 0 / 25%);
+        border-radius: 25px;
+        display: block;
+        /*width:37%;*/
+        margin:4px auto;
+        margin-top: -7px;
+        margin-left: -7px;
+    }
+    .navbar{
+        display: inline-block;
+    }
+    .navbar li{
+        display:inline-block;
+        font-size: 16px;
+        
+    }
+    .navbar li a{
+        color: white;
+        text-decoration: none;
+        padding: 23px 15px;  
+        font-family: "Varela Round", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; 
+        font-size: 1.25rem;  
+    }
+    .navbar li a:hover{
+        color: rgba(0, 195, 255, 0.74);
+        /* text-decoration: underline; */
+        font-weight: bold;
+    } 
+    .btn{
+        margin:0px 9px;
+        color: rgb(0, 0, 0);
+        background-color: rgba(0, 0, 0, 0);
+        padding:3px 15px;
+        border:2px solid rgba(163, 13, 13, 0.336);
+        border-radius: 10px;
+        font-size: 14px;
+        cursor: pointer;
+        font-family: "Varela Round", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    }
+    .btn:hover{
+        color:rgba(0, 195, 255, 0.74);
+    }
+    .right{
+        /* border: 3px solid violet; */
+        display: inline-block;
+        position: absolute;
+        right: 0px;
+        top:14px;
+    }
+    #loginn{
+        margin-left: 1080px;
+        font-weight: bolder;
+    }
+    .problem{
+        margin-left: 87px;
+    }
+    .page{
+        color: #fcde59;
+    }
+</style>
+
+<body class="sawonew">
+    <div class="mid">
+        <ul class="navbar">
+            <li class="problem"><a href="#"><span>Let Us </span><strong>PREDICT</strong></a> </li>
+            <li><a href="./sawo.html" class="active" id="loginn">Login</a></li>
+            
+        </ul>
+        </div>
+        <!-- right box for buttons
+        <div class="right">
+        <button class="btn">call us now</button>
+        <button class="btn">Email us</button>
+        </div> -->
+    <div class="container">
+        <h1 class="page">Login Page</h1>
+        <div id="sawo-container" style="height: 300px; width: 300px"></div>
+    </div>
+    <script src="https://websdk.sawolabs.com/sawo.min.js"></script>
+    <script>
+        var config = {
+            // should be same as the id of the container created on 3rd step
+            containerID: 'sawo-container',
+            // can be one of 'email' or 'phone_number_sms'
+            identifierType: 'email',
+            // Add the API key copied from 2nd step
+            apiKey: 'c6b8b315-c7f1-470a-9380-77de5539f568',
+            // Add a callback here to handle the payload sent by sdk
+            onSuccess: (payload) => {
+                window.location = 'http://127.0.0.1:5000/'
+            },
+        }
+        var sawo = new Sawo(config)
+        sawo.showForm()
+    </script>
+</body>
+
+</html>
